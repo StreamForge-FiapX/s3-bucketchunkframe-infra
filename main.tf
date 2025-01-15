@@ -7,9 +7,6 @@ resource "aws_s3_bucket" "my_bucket" {
     Name        = "EKS Applications Bucket"
     Environment = "Production"
   }
-
-  # Depende explicitamente da criação do EventBridge e do Event Bus
-  depends_on = [aws_cloudwatch_event_bus.custom_event_bus]
 }
 
 # Criar uma política de bucket que permita acesso ao cluster EKS
